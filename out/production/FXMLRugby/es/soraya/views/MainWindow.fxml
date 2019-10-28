@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.soraya.views.MainWindowController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Partidos">
+          <items>
+            <MenuItem fx:id="menuAlta" mnemonicParsing="false" onAction="#altaPartido" text="Alta..." />
+            <MenuItem fx:id="menuModificar" mnemonicParsing="false" onAction="#modificarPartido" text="Modificar..." />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ComboBox fx:id="cbFiltroDivision" prefWidth="150.0" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <TableView fx:id="tvPartidos" layoutY="53.0" prefHeight="312.0" prefWidth="620.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Local">
+                 <cellValueFactory><PropertyValueFactory property="equipoLocal" />
+                 </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="Visitante">
+                 <cellValueFactory><PropertyValueFactory property="equipoVisitante" />
+                  </cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="75.0" text="División">
+                  <cellValueFactory><PropertyValueFactory property="division" />
+                  </cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Resultado">
+                  <cellValueFactory><PropertyValueFactory property="resultado" />
+                  </cellValueFactory>
+              </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Fecha">
+                    <cellValueFactory><PropertyValueFactory property="fechaPartido" />
+                    </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
