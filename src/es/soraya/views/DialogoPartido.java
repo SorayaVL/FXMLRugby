@@ -11,6 +11,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.validation.ValidationSupport;
+import org.controlsfx.validation.Validator;
+
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -38,9 +41,14 @@ public class DialogoPartido extends BaseController implements Initializable {
         private Button btnAceptar;
 
         public void initialize(URL url, ResourceBundle resourceBundle) {
+
                cbDivision.setItems(Logica.getINSTANCE().getListaDivision());
                cbDivision.getSelectionModel().selectFirst();
                dpFecha.setValue(LocalDate.now());
+               ValidationSupport  validationSupport = new ValidationSupport();
+               validationSupport.registerValidator(tfEquipoLocal, Validator.createEmptyValidator("Inserte el equipo local"));
+               /*validationSupport.registerValidator(tfEquipoVisitante, Validator.createEmptyValidator("Inserte el equpipo visitante"));
+               validationSupport.registerValidator(tfResultado, Validator.createEmptyValidator("Inserte el resultado del partido en el formato correcto"));*/
        }
 
 

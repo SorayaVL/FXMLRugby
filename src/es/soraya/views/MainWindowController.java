@@ -36,9 +36,8 @@ public class MainWindowController extends BaseController implements Initializabl
         @FXML
         void altaPartido(ActionEvent event) {
 
-               cargarDialogo("DialogoPartido.fxml", 300, 500);
-               filtrar();
-
+               cargarDialogo("DialogoPartido.fxml", 600, 300);
+               abrirDialogo(true);
         }
 
         @FXML
